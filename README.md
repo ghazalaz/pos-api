@@ -19,7 +19,8 @@ admin login info: {"username": "admin", "password": "toor"}
 <h1>Examples</h1>
 
 
-POST /api/v1/menu-items/
+`POST,GET /api/v1/menu-items/` `GET, PUT, DELETE /api/v1/menu-items/id/`
+
 ```
 {
     "name": "Burger",
@@ -31,7 +32,7 @@ POST /api/v1/menu-items/
 <h3>demo</h3>
 </br>
 
-POST /api/v1/orders/ 
+`POST, GET /api/v1/orders/` `GET, PUT, DELETE /api/v1/orders/id/`
 
 ```
 {
@@ -52,7 +53,7 @@ POST /api/v1/orders/
 <h3>demo2</h3>
 </br>
 
-POST /api/v1/modifier/groups
+`POST, GET /api/v1/modifier/groups/` `GET, PUT, DETELE /api/v1/modifier/groups/id/`
 
 ```
 {
@@ -63,7 +64,7 @@ POST /api/v1/modifier/groups
 }
 ```
 
-POST /api/v1/modifier/items 
+`POST, GET /api/v1/modifier/items` `GET, PUT, DELETE /api/v1/modifier/items/id/`
 
 
 ```
@@ -89,7 +90,7 @@ create multiple
 ]
 ```
 
-POST /api/v1/orders/ 
+`POST, GET /api/v1/orders/` `GET, PUT, DELETE /api/v1/orders/id/` 
 
 ```
 {
