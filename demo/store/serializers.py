@@ -44,7 +44,7 @@ class OrderSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError({"items": "Order items cannot be empty"})
         items = data['items']
         for item in items:
-            if item['menu_item'].quantity < item['quantity']:
+            if item['menu_item'].quantity < item['quantity'] or item['quantity'] <= 0:
                 raise serializers.ValidationError({'item': item, 'error': "Invalid quantity"})
         order_amount = sum([item['menu_item'].price * item['quantity'] for item in items])
         if data['paid'] < order_amount:
@@ -62,4 +62,4 @@ class MenuItemSerializer(serializers.ModelSerializer):
     quantity = serializers.IntegerField(min_value=0, default=0)
     class Meta:
         model = MenuItem
-        fields = ('id', 'price', 'quantity', 'description')
+        fields = ('id', 'name', 'price', 'quantity', 'description')

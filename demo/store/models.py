@@ -2,15 +2,17 @@ from django.db import models
 
 
 class MenuItem(models.Model):
+    name = models.CharField(max_length=200)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     quantity = models.IntegerField()
     description = models.TextField(null=True, blank=True)
 
     def __repr__(self):
-        return '<MenuItem object ({}) "{}">'.format(self.id, self.description)
+        return '<MenuItem object ({}) "{}">'.format(self.id, self.name)
 
     def __str__(self):
-        return '<MenuItem object ({}) "{}">'.format(self.id, self.description)
+        return '<MenuItem object ({}) "{}">'.format(self.id, self.name)
+
 
 class Order(models.Model):
     class Status:
@@ -38,10 +40,10 @@ class OrderItem(models.Model):
     quantity = models.IntegerField()
 
     def __repr__(self):
-        return '<OrdertItem object ({}) {}x "{}">'.format(self.id, self.quantity, self.product.id)
+        return '<OrdertItem object ({}) {}x "{}">'.format(self.id, self.quantity, self.menu_item.id)
 
     def __str__(self):
-        return '<OrdertItem object ({}) {}x "{}">'.format(self.id, self.quantity, self.product.id)
+        return '<OrdertItem object ({}) {}x "{}">'.format(self.id, self.quantity, self.menu_item.id)
 
 
 
