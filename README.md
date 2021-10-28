@@ -1,4 +1,4 @@
-<h1>POS API Challenge Code</h1>
+<h1>POS API Sample</h1>
 
 This repository contains two django prjects.
 <ul>
